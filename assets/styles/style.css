@@ -1,3 +1,7 @@
 body {
-  background-image: url("../images/AdobeStock_269375268_Preview.jpeg");
+  background-image: url("../images/SAINTLUCIABRATOP-LIME_5_540x.jpg");
+}
+
+.header-image {
+  max-width: 300px;
 }
