@@ -21,6 +21,6 @@ $(window).on('scroll', function () {
   if (calc > '1') {
     header.css({ opacity: 1 })
   } else if (calc < '0') {
-    header.css({ opacity: 0 })
+    header.css({ opacity: 0.6 })
   }
 })

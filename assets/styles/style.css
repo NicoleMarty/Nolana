@@ -6,10 +6,9 @@ body {
   max-height: 100vh;
 }
 
-nav {
-  position: fixed;
-  padding-left: 2%;
-  padding-right: 2%;
+.brand-logo {
+  font-family: "Monoton", cursive;
+  font-size: 48px;
 }
 
 .tracking-in-expand {
@@ -260,16 +259,13 @@ nav {
   }
 }
 
-header {
-  min-height: 100vh;
-}
-
 nav {
   z-index: 3;
 }
 
 header {
   z-index: 2;
+  min-height: 100vh;
 }
 
 #nav-bg {
@@ -302,11 +298,11 @@ header:before {
   background-image: url("../images/SAINTLUCIABRATOP-LIME_5_540x.jpg");
   background-repeat: repeat-x;
   background-position: 65% 50%;
-  opacity: 0.8;
+  opacity: 1;
 }
 
 #nav-bg {
-  background: #ee6e73;
+  background: #004d40;
   position: fixed;
   height: 65px;
   width: 100%;
@@ -328,7 +324,60 @@ header p {
 }
 
 #about {
-  background: #eee;
-  height: 70em;
+  background: #eeeeee;
+  height: 30em;
   padding: 5em 0;
+}
+
+#grid {
+  height: 100%;
+  font-size: 16px;
+  line-height: 1.5;
+  font-family: Trebuchet MS, Helvetica, Arial, sans-serif;
+}
+
+#grid {
+  background-size: 0.75em 100%, 100% 100%;
+  background-attachment: fixed;
+  display: -webkit-box;
+  display: flex;
+  -webkit-box-align: center;
+  align-items: center;
+}
+
+.wrapper {
+  position: relative;
+  -webkit-box-flex: 1;
+  flex-grow: 1;
+  margin: auto;
+  max-width: 1200px;
+  max-height: 1200px;
+  display: grid;
+  grid-template-columns: repeat(8, 1fr);
+  grid-template-rows: repeat(4, 1fr);
+  grid-gap: 2vmin;
+  justify-items: center;
+  -webkit-box-align: center;
+  align-items: center;
+}
+
+img {
+  z-index: 1;
+  grid-column: span 2;
+  max-width: 100%;
+  margin-bottom: -52%;
+  -webkit-clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);
+  clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);
+  -webkit-transform: scale(1);
+  transform: scale(1);
+  -webkit-transition: all 0.25s;
+  transition: all 0.25s;
+}
+img:nth-child(7n + 1) {
+  grid-column: 2 / span 2;
+}
+img:hover {
+  z-index: 2;
+  -webkit-transform: scale(2);
+  transform: scale(2);
 }
