@@ -1,12 +1,7 @@
 $(document).ready(function () {
   $('.sidenav').sidenav()
-})
-
-$(document).ready(function () {
+  $('.collapsible').collapsible()
   $('.button-collapse').sideNav()
   $('.collapsible').collapsible()
-})
-
-$(document).ready(function () {
   $('.carousel').carousel()
 })
