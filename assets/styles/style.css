@@ -5,6 +5,10 @@ nav.nav-mobile {
 nav {
   font-family: "Raleway", sans-serif;
 }
+
+.material-icons {
+  color: black;
+}
 .background-image {
   max-height: 100vh;
   position: initial;
