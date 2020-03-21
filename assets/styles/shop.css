@@ -1,9 +1,8 @@
-nav {
-  padding-top: 10px;
-}
-.brand-logo {
+#brand-logo {
   font-family: "Rock Salt";
-  font-size: 42px;
+  font-size: 32px;
+  padding-top: 10px;
+  padding-bottom: 10px;
 }
 
 #shop,
@@ -12,6 +11,8 @@ nav {
 #my-account {
   font-family: "Raleway";
   font-size: 12px;
+  padding-top: 10px;
+  padding-bottom: 10px;
 }
 
 #shop:hover,
@@ -21,6 +22,8 @@ nav {
   font-weight: 900;
   text-decoration: overline;
   background: transparent;
+  padding-top: 10px;
+  padding-bottom: 10px;
 }
 
 #shop {
@@ -29,4 +32,34 @@ nav {
 
 #my-account {
   margin-right: 15px;
+}
+
+#colOne {
+  min-height: 90vh;
+}
+
+#colTwo {
+  min-height: 90vh;
+  background-image: url("../images/forloveandlemons/FIONADRESS_BLK_04_540x.jpg");
+  background-size: cover;
+}
+
+.row .uno {
+  min-height: 40vh;
+}
+
+p {
+  font-family: "Rock Salt";
+  font-weight: bolder;
+  color: black;
+  line-height: 0pt;
+  margin-left: 10px;
+}
+
+#f {
+  font-size: 22px;
+}
+
+#colThree {
+  min-height: 90vh;
 }
