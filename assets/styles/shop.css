@@ -35,20 +35,15 @@
 }
 
 #colOne {
-  min-height: 90vh;
+  min-height: 85vh;
 }
 
 #colTwo {
-  min-height: 90vh;
-  background-image: url("../images/forloveandlemons/FIONADRESS_BLK_04_540x.jpg");
-  background-size: cover;
+  min-height: 85vh;
+  max-height: 85vh;
+  overflow: hidden;
 }
-
-.row .uno {
-  min-height: 40vh;
-}
-
-p {
+.phrase {
   font-family: "Rock Salt";
   font-weight: bolder;
   color: black;
@@ -61,5 +56,5 @@ p {
 }
 
 #colThree {
-  min-height: 90vh;
+  min-height: 85vh;
 }
