@@ -1,3 +1,7 @@
+nav {
+  position: absolute;
+  z-index: 3;
+}
 #brand-logo {
   font-family: "Rock Salt";
   font-size: 32px;
@@ -34,27 +38,30 @@
   margin-right: 15px;
 }
 
-#colOne {
-  min-height: 85vh;
+/* main content grid */
+#rowOne {
+  margin-bottom: 0px;
+}
+#rowOne {
+  padding-top: 14vh;
 }
 
-#colTwo {
-  min-height: 85vh;
-  max-height: 85vh;
+#subColOne,
+#subColTwo,
+#subColThree,
+#subColFour,
+#subColFive,
+#subColSix {
   overflow: hidden;
-}
-.phrase {
-  font-family: "Rock Salt";
-  font-weight: bolder;
-  color: black;
-  line-height: 0pt;
-  margin-left: 10px;
+  max-height: 120vh;
+  min-height: 120vh;
 }
 
-#f {
-  font-size: 22px;
+#subColThree {
+  background-image: url("../images/free_people/white_boots01.jpg");
+  background-repeat: no-repeat;
 }
 
-#colThree {
-  min-height: 85vh;
+img {
+  max-width: 30vw;
 }

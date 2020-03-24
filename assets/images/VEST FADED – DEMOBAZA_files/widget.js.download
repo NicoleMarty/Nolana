@@ -1,0 +1,128 @@
+// script loading, inspired from https://gist.github.com/carolineschnapp/5397337
+(function () {
+
+  var loadScript = function (url, callback) {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+
+    // If the browser is Internet Explorer.
+    if (script.readyState) {
+      script.onreadystatechange = function () {
+        if (script.readyState === "loaded" || script.readyState === "complete") {
+          script.onreadystatechange = null;
+          callback();
+        }
+      };
+      // For any other browser.
+    } else {
+      script.onload = function () {
+        callback();
+      };
+    }
+
+    script.src = url;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  };
+
+  var myAppJavaScript = function ($) {
+    // grab the accountkey from the script src, it's something like:
+    // https://<our domain/path>/widget.js?accountkey=xyz&shop=zopim-3.myshopify.com
+
+    var scripts = document.getElementsByTagName('script');
+    var myScript = "";
+    for (var script in scripts) {
+      if (scripts[script].src.indexOf("js/integration/shopify/zopim") !== -1) {
+        myScript = scripts[script];
+        break;
+      }
+    }
+
+    var getParamValue = function (paramIndex, paramLength) {
+      // there could be another param, so checking that here
+      var indexOfTrailParam = myScript.src.indexOf('&', paramIndex);
+      if (indexOfTrailParam === -1) {
+        return myScript.src.substr(paramIndex + paramLength);
+      } else {
+        return myScript.src.substr(paramIndex + paramLength, indexOfTrailParam - paramIndex - paramLength);
+      }
+    };
+
+    var indexOfAccountkeyParam = myScript.src.indexOf('accountkey=');
+
+    var accountKey;
+    if (indexOfAccountkeyParam > -1) {
+      accountKey = getParamValue(indexOfAccountkeyParam, 'accountkey='.length);
+    } else {
+      console.log("No valid script src found for URL " + myScript.src);
+      return;
+    }
+
+    window.$zopim||(function(d,s){var z=$zopim=function(c){z._.push(c)},$=z.s=
+        d.createElement(s),e=d.getElementsByTagName(s)[0];z.set=function(o){z.set.
+        _.push(o)};z._=[];z.set._=[];$.async=!0;$.setAttribute("charset","utf-8");
+      $.src="//v2.zopim.com/?"+accountKey;z.t=+new Date;$.
+          type="text/javascript";e.parentNode.insertBefore($,e)})(document,"script");
+
+    // determine the cart contents
+    setTimeout(function() {
+      $.getJSON('/cart.js', function (cart) {
+        var cartItems = cart.item_count;
+        var cartTotalPrice = (cart.total_price / 100).toFixed(2);
+        if (cartItems > 0) {
+          var cartItemTitles = [];
+          var zopimNotes = "Cart total: " + cartTotalPrice + "\n";
+          for (var c in cart.items) {
+            var cartItem = cart.items[c];
+            if (cartItem.title) {
+              cartItemTitles.push("Cart: " + cartItem.title.replace(/,/g, ' '));
+            }
+          }
+          if ($zopim === undefined || $zopim.livechat === undefined) return;
+          $zopim.livechat.addTags(cartItemTitles.join(','));
+        }
+        // determine the account info (consider caching)
+        $.ajax({
+          url: '/account'
+        }).done(function (content) {
+          if ($zopim === undefined || $zopim.livechat === undefined) return;
+
+          var parsed = $.parseHTML(content);
+          var customerEmail = $(parsed).find('#customer_sidebar .email').text();
+          if (customerEmail === "") {
+            customerEmail = $(parsed).find('.customer-details .email').text();
+          }
+
+          var customerName = $(parsed).find('#customer_sidebar h2').text();
+          if (customerName === "") {
+            customerName = $(parsed).find('.customer-details h5').text();
+          }
+
+          if (customerEmail !== "" || customerName !== "") {
+            var updateCustomer = {};
+            if (customerEmail !== "") {
+              updateCustomer.email = customerEmail;
+            }
+            if (customerName !== "") {
+              updateCustomer.name = customerName;
+            }
+            $zopim.livechat.set(updateCustomer);
+          }
+        });
+      })
+    }, 150);
+  };
+
+  /* If jQuery has not yet been loaded or if it has but it's too old for our needs,
+   we will load jQuery from the Google CDN, and when it's fully loaded, we will run
+   our app's JavaScript. Set your own limits here, the sample's code below uses 1.9.1
+   as the minimum version we are ready to use, and if the jQuery is older, we load 1.9.1 */
+  if ((typeof jQuery === 'undefined') || (parseInt(jQuery.fn.jquery) === 1 && parseFloat(jQuery.fn.jquery.replace(/^1\./, "")) < 9.1)) {
+    loadScript('//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js', function () {
+      var jQuery191 = jQuery.noConflict(true);
+      myAppJavaScript(jQuery191);
+    });
+  } else {
+    myAppJavaScript(jQuery);
+  }
+
+})();

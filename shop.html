@@ -14,7 +14,7 @@
     <!--Import Google Icon Font-->
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <!-- Compiled and minified CSS -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <link rel="stylesheet" href="assets/styles/materialize.css">
     <!-- Rock Salt, Dancing Script, and Raleway Fonts-->
     <link href="https://fonts.googleapis.com/css?family=Dancing+Script|Raleway|Rock+Salt&display=swap" rel="stylesheet">
 
@@ -23,7 +23,7 @@
 <body>
     <nav class="transparent z-depth-0">
         <div class="nav-wrapper transparent">
-            <a id="brand-logo" href="index.html" class="brand-logo black-text center">QUARANTINE.</a>
+            <a id="brand-logo" href="index.html" class="brand-logo black-text center">QUARANTINE</a>
             <ul id="nav-account" class="right hide-on-med-and-down">
                 <li><a id="my-account" class="black-text" href=myaccount.html>My Account</a></li>
             </ul>
@@ -44,36 +44,55 @@
 
     <!-- Content Start -->
     <main>
-        <div class="row one">
-            <div class="col s12">
-                <div id="colOne" class="col s12 m6 l4">
+        <div id="rowOne" class="row">
+            <div id="colOne" class="col s12">
+                <div id="subColOne" class="col s12 m6 l2">
+
                 </div>
-                <div id="colTwo" class="col s12 m6 l4">
-                    <div class="carousel">
-                        <a class="carousel-item" href="#one!"><img
-                                src="./assets/images/free_people/tops/bralette_01.jpg"></a>
-                        <a class="carousel-item" href="#two!"><img
-                                src="./assets/images/free_people/white_boots01.jpg"></a>
-                        <a class="carousel-item" href="#three!"><img
-                                src="./assets/images/free_people/bottoms/flutter_shorts_grey_01.jpg"></a>
-                        <a class="carousel-item" href="#four!"><img
-                                src="./assets/images/free_people/onsies/nude_shorts_onesie_01.jfif"></a>
-                        <a class="carousel-item" href="#five!"><img
-                                src="./assets/images/free_people/boho_gown01.jpg"></a>
-                    </div>
-                    <div class="phrase">
-                        <p>Stay the</p>
-                        <p id="f">F*ck</p>
-                        <p>away</p>
-                        <p>from me.</p>
+                <div id="subColTwo" class="col s12 m6 l2">
+
+                </div>
+                <div id="subColThree" class="col s12 m6 l4">
+                    <div class="row">
+                        <div class="colTwo" class="col s12">
+                            <div id="colTwoOne" class="col s4">
+                                <button></button>
+
+                            </div>
+                            <div id="colTwoTwo" class="col s4">
+                                <button></button>
+
+                            </div>
+                            <div id="colTwoThree" class="col s4">
+                                <button></button>
+
+                            </div>
+                        </div>
                     </div>
                 </div>
-                <div id="colThree" class="col s12 m6 l4 three">
+                <div id="subColFour" class="col s12 m6 l2">
+
+                </div>
+                <div id="subColFive" class="col s12 m6 l2">
+
+                </div>
+            </div>
+        </div>
+        <div id="rowTwo" class="row">
+            <!-- Bottom Modal Trigger -->
+            <a class="waves-effect waves-light btn modal-trigger" href="#menu">Modal</a>
+            <!-- Modal Structure -->
+            <div id="menu" class="modal bottom-sheet">
+                <div class="modal-content">
+                    <h4>Modal Header</h4>
+                    <p>A bunch of text</p>
+                </div>
+                <div class="modal-footer">
+                    <a href="#!" class="modal-close waves-effect waves-green btn-flat">Agree</a>
                 </div>
             </div>
         </div>
 
-        </div>
     </main>
 </body>
 <!-- Compiled and minified JavaScript -->
