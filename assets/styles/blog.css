@@ -1,6 +1,3 @@
-nav {
-  padding-top: 10px;
-}
 .brand-logo {
   font-family: "Rock Salt";
   font-size: 42px;
@@ -21,12 +18,4 @@ nav {
   font-weight: 900;
   text-decoration: overline;
   background: transparent;
-}
-
-#shop {
-  margin-left: 15px;
-}
-
-#my-account {
-  margin-right: 15px;
 }

@@ -1,12 +1,8 @@
-nav {
-  position: absolute;
-  z-index: 3;
-}
+/* main navigation */
 .brand-logo {
   font-family: "Rock Salt";
   font-size: 32px;
-  padding-top: 10px;
-  padding-bottom: 10px;
+  text-align: center;
 }
 
 #shop,
@@ -15,8 +11,6 @@ nav {
 #my-account {
   font-family: "Raleway";
   font-size: 12px;
-  padding-top: 10px;
-  padding-bottom: 10px;
 }
 
 #shop:hover,
@@ -26,27 +20,31 @@ nav {
   font-weight: 900;
   text-decoration: overline;
   background: transparent;
-  padding-top: 10px;
-  padding-bottom: 10px;
-}
-
-#shop {
-  margin-left: 15px;
-}
-
-#my-account {
-  margin-right: 15px;
 }
 
 /* main content grid */
-html,
-body,
-.block {
-  height: 100vh;
+#rowOne {
+  margin-top: 5%;
 }
-.brand-logo {
+
+.text {
+  font-family: "Rock Salt";
+  font-size: 14pt;
+}
+
+#subColOne,
+#subColTwo {
+  position: relative;
+}
+
+.title {
+  font-family: "Rock Salt";
+  font-size: 52pt;
+  text-align: left;
+}
+
+.sub-title {
+  font-family: "Raleway";
+  font-size: 18pt;
   text-align: center;
-}
-#welcome {
-  background-image: url("../images/free_people/white_boots01.jpg");
 }
