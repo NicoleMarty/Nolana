@@ -30,11 +30,13 @@
   font-size: 14pt;
 }
 
-#colOne {
+#colOne,
+#colTwo {
   padding-top: 5%;
 }
 
-#subColOne {
+#subColOne,
+#subColThree {
   position: relative;
   max-height: 80vh;
   overflow: hidden;
@@ -56,11 +58,25 @@
   position: relative;
   z-index: 3;
 }
+#left {
+  font-family: "Rock Salt";
+  font-size: 56pt;
+  text-align: left;
+  margin-bottom: 0;
+  position: relative;
+  z-index: 3;
+}
 
 .sub-title {
   font-family: "Raleway";
   font-size: 14pt;
   text-align: right;
+}
+
+#left-subtitle {
+  font-family: "Raleway";
+  font-size: 14pt;
+  text-align: left;
 }
 
 .naughty-word {
@@ -75,6 +91,13 @@ a {
   float: right;
   color: black;
 }
-.btn-flat:hover {
+
+#flat-left {
+  font-family: "Raleway";
+  float: left;
+  color: black;
+}
+.btn-flat:hover,
+#flat-left:hover {
   text-decoration: overline;
 }
