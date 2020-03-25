@@ -35,16 +35,30 @@
 #subColOne,
 #subColTwo {
   position: relative;
+  max-height: 80vh;
 }
 
 .title {
   font-family: "Rock Salt";
-  font-size: 52pt;
+  font-size: 56pt;
   text-align: left;
+  margin-bottom: 0;
+  position: relative;
+  overflow: visible;
+  z-index: 3;
 }
 
 .sub-title {
   font-family: "Raleway";
-  font-size: 18pt;
-  text-align: center;
+  font-size: 14pt;
+  text-align: right;
+}
+
+.naughty-word {
+  font-family: "Rock Salt";
+}
+
+.btn-small {
+  float: right;
+  font-family: "Raleway";
 }
