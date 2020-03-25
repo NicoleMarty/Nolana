@@ -1,10 +1,10 @@
 /* main navigation */
 .brand-logo {
   font-family: "Rock Salt";
-  text-align: center;
 }
 #brand {
-  font-size: 12pt;
+  font-size: 14px;
+  color: black;
 }
 
 #shop,
@@ -19,7 +19,6 @@
 #blog:hover,
 #about:hover,
 #my-account:hover {
-  font-weight: 900;
   text-decoration: overline;
   background: transparent;
 }
@@ -46,8 +45,7 @@
   position: relative;
   max-height: 80vh;
   overflow: visible;
-  padding-left: 10%;
-  padding-right: 0;
+  padding-left: 5vw;
 }
 
 .title {
@@ -69,7 +67,14 @@
   font-family: "Rock Salt";
 }
 
-.btn-small {
+a {
+  color: black;
+}
+.btn-flat {
   font-family: "Raleway";
   float: right;
+  color: black;
+}
+.btn-flat:hover {
+  text-decoration: overline;
 }
